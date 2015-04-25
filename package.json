@@ -1,0 +1,15 @@
+{
+  "name": "yaml2json",
+  "version": "0.0.0",
+  "description": "change swagger from yaml to json",
+  "main": "index.js",
+  "dependencies": {
+    "swagger-parser": "^2.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
