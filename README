@@ -1,2 +1,3 @@
 DEMO URL
 http://localhost:7102/?yaml=http://127.0.0.1:7101/api.yaml
+http://localhost:7102/?proxy=http://localhost:7101/proxy/&yaml=http://127.0.0.1:7101/api.yaml

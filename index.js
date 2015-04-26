@@ -11,6 +11,7 @@ var PROXY_SERVER = "http://localhost:7101/proxy/";
 var parser = require("swagger-parser");
 var http = require('http');
 var url = require('url');
+var querystring = require('querystring');
 
 http.createServer(function(req, res) {
 
@@ -19,10 +20,24 @@ http.createServer(function(req, res) {
     'Content-Type': 'application/json'
   };
   var urlobj = url.parse(req.url);
+  var queryObj = querystring.parse(urlobj.query);
+  console.log(queryObj);
+  console.log('-----------');
 
-  if (req.method === 'GET' && urlobj.query) {
-    var yamlUrl = urlobj.query.split('=')[1];
-    parser.parse(PROXY_SERVER + '?url=' + yamlUrl, {
+  if (req.method === 'GET' && urlobj.query && queryObj.yaml) {
+    var yamlUrl = queryObj.yaml;
+
+    if (!queryObj.noproxy) {
+
+      if (queryObj.proxy) {
+        yamlUrl = queryObj.proxy + '?url=' + yamlUrl;
+      } else {
+        yamlUrl = PROXY_SERVER + '?url=' + yamlUrl;
+      }
+    }
+
+
+    parser.parse(yamlUrl, {
       dereference$Refs: false
     }, function(err, api, metadata) {
 

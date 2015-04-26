@@ -10,6 +10,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT"
+  "author": "ke.zhang.cn@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KeZhang/yaml2json.git"
+  },
+  "keywords": [
+    "swagger",
+    "api",
+    "yaml",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/KeZhang/yaml2json/issues"
+  },
+  "homepage": "https://github.com/KeZhang/yaml2json"
 }
